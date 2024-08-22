@@ -161,17 +161,28 @@ footer {
 }
 
 .chat-container {
-    position: fixed;
-    bottom: 93px;
-    right: 13px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: var(--text-color);
-    padding: 0.2rem 1rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    z-index: 1000;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 2px 10px var(--shadow-color);
+position: fixed;
+bottom: 105px;
+right: 19px;
+color: white;
+padding: 2px 6px;
+border: 2px solid #cce7ff;
+border-radius: 11px;
+z-index: 9961;
+max-width: 256px;
+text-align: right;
+opacity: 1;
+transition: opacity 0.4s ease, transform 0.4s ease;
+transform: translateY(20px);
+background-color: rgba(0, 0, 0, 0.5);
+backdrop-filter: blur(10px);
+font-size: 12px;
+}
+
+.chat-container.show {
+opacity: 1;
+transform: translateY(0);
+animation: pulse 3s infinite;
 }
 
 @keyframes fadeIn {
