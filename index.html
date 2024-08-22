@@ -4,58 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chloe AI 1.0 - Smart Appointment Booking</title>
+    <title>Chloe 2.0 - Intelligent Appointment Management</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
-        <div class="logo">Chloe AI</div>
-        <button class="demo" id="openModal">Try Chloe 1.0</button>
+        <div class="logo">Chloe 2.0</div>
+        <button class="demo" id="openModal">Experience Chloe 2.0</button>
     </header>
 
-    <!-- Modal Structure -->
-    <div id="demoModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <h2>Access Chloe AI Demo</h2>
-            <p>Fill in your details to experience Chloe, the smart appointment booking assistant.</p>
-            <!-- Embed Google Form Iframe Here -->
-        </div>
-    </div>
-
     <main>
-        <h1>Streamline Your Appointments with Chloe</h1>
-        <p>Chloe is here to handle your appointment scheduling, answer FAQs, and keep your calendar organized effortlessly.</p>
+        <h1>Revolutionize Your Appointment Management with Chloe 2.0</h1>
+        <p class="subtitle">Empower your business with AI-driven scheduling, seamless communication, and intelligent organization.</p>
 
         <div class="dashboard-preview">
             <div class="dashboard-header">
-                <h2 class="dashboard-welcome">Meet Chloe 1.0</h2>
+                <h2 class="dashboard-welcome">Discover Chloe 2.0</h2>
             </div>
             <div class="dashboard-content">
                 <p class="dashboard-description">
-                    Chloe isn’t just any appointment scheduler; she’s a multilingual, smart assistant designed to make your business run smoothly. Explore Chloe’s capabilities by interacting with her—book a test appointment, ask questions, or see how she responds to common inquiries. Let Chloe handle the routine, so you can focus on what matters most.
+                    Chloe 2.0 is not just an appointment scheduler; it's your multilingual, AI-powered business assistant. Designed to streamline operations and enhance customer experience, Chloe effortlessly manages appointments, answers inquiries, and keeps your business running smoothly 24/7.
                 </p>
-                <h3 class="dashboard-subheading">Why Choose Chloe for Your Business?</h3>
+                <h3 class="dashboard-subheading">Elevate Your Business with Chloe 2.0</h3>
                 <p class="dashboard-description">
-                    Imagine having Chloe on your team, seamlessly managing appointments and more. Like what you see? Let's bring Chloe into your business! Contact us, and we’ll customize Chloe to meet your exact needs, leading the way in smart customer service.
+                    Imagine having a tireless assistant that understands your business needs and communicates flawlessly with your clients. Chloe 2.0 makes this a reality. From intelligent scheduling to personalized customer interactions, Chloe adapts to your unique business requirements, allowing you to focus on what truly matters – growing your business and delighting your customers.
                 </p>
             </div>
         </div>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <hr>
-            <p>© 2024 Chloe AI Automation | Smart Appointment Solutions</p>
-        </div>
+        <p>&copy; 2024 Chloe 2.0 | Intelligent Appointment Solutions</p>
     </footer>
 
     <div id="chatContainer" class="chat-container">
-        Ready to see Chloe in action? 💬 Try the demo now!
+        Ready to experience Chloe 2.0? Try the demo now! 💬
     </div>
 
-    <script type="text/javascript">
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Experience Chloe 2.0</h2>
+            <p>Enter your details to start your journey with Chloe, your intelligent appointment assistant.</p>
+            <!-- Embed Google Form Iframe Here -->
+        </div>
+    </div>
+
+    <script>
         (function(d, t) {
             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
             v.onload = function() {
@@ -75,27 +71,19 @@
             v.type = "text/javascript";
             s.parentNode.insertBefore(v, s);
         })(document, 'script');
-    </script>
 
-    <script>
         // Modal Functionality
-        var modal = document.getElementById("demoModal");
-        var openModalBtn = document.getElementById("openModal");
-        var closeModalBtn = document.getElementById("closeModal");
+        const modal = document.getElementById("demoModal");
+        const openModalBtn = document.getElementById("openModal");
+        const closeModalBtn = document.getElementById("closeModal");
 
-        openModalBtn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        closeModalBtn.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
+        openModalBtn.onclick = () => modal.style.display = "block";
+        closeModalBtn.onclick = () => modal.style.display = "none";
+        window.onclick = (event) => {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
-        }
+        };
     </script>
 </body>
 
