@@ -47,11 +47,24 @@
             <span class="close" id="closeModal">&times;</span>
             <h2>Experience Chloe 2.0</h2>
             <p>Enter your details to start your journey with Chloe, your intelligent appointment assistant.</p>
-            <!-- Embed Google Form Iframe Here -->
+            <<div id="voiceflow-chat" style="width: 800px; max-width: 90%; height: 80vh; margin: 2rem auto;"></div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="text/javascript">
+    (function (d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function () {
+        window.voiceflow.chat.load({
+          verify: { projectID: '66cd7afe4a5717f5b59d1c0e' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        }).then(() => {setTimeout(() => {window.voiceflow.chat.open();}, 500)});
+      }
+      v.src = "https://voiceflow.seefusion.tech/embed/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
+  <link rel="stylesheet" href="https://voiceflow.seefusion.tech/embed/chat/style.css">
 </body>
 
 </html>
