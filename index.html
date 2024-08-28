@@ -26,7 +26,6 @@
                 <p class="dashboard-description">
                     Chloe is not just an appointment scheduler; it's your multilingual, AI-powered business assistant. Designed to streamline operations and enhance customer experience, Chloe effortlessly manages appointments, answers inquiries, and keeps your business running smoothly 24/7.
                 </p>
-                <h3 class="dashboard-subheading">Elevate Your Business with OctoPlex AI</h3>
                 <p class="dashboard-description">
                     Imagine having a tireless assistant that understands your business needs and communicates flawlessly with your clients. OctoPlex AI makes this a reality. From intelligent scheduling to personalized customer interactions, Chloe adapts to your unique business requirements, allowing you to focus on what truly matters – growing your business and delighting your customers.
                 </p>
@@ -46,25 +45,22 @@
         <div class="modal-content">
             <span class="close" id="closeModal">&times;</span>
             <h2>Experience Chloe 2.0</h2>
-            <p>Enter your details to start your journey with Chloe, your intelligent appointment assistant.</p>
-            <<div id="voiceflow-chat" style="width: 800px; max-width: 90%; height: 80vh; margin: 2rem auto;"></div>
+            <p>Book an appointment with the creators and start your journey with an intelligent appointment assistant.</p>
         </div>
     </div>
 
     <script type="text/javascript">
-    (function (d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function () {
-        window.voiceflow.chat.load({
-          verify: { projectID: '66cd7afe4a5717f5b59d1c0e' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production'
-        }).then(() => {setTimeout(() => {window.voiceflow.chat.open();}, 500)});
-      }
-      v.src = "https://voiceflow.seefusion.tech/embed/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-    })(document, 'script');
-  </script>
-  <link rel="stylesheet" href="https://voiceflow.seefusion.tech/embed/chat/style.css">
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '66cd7afe4a5717f5b59d1c0e' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production'
+            });
+          }
+          v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
 </body>
-
 </html>
