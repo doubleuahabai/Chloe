@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #ada5b0; /* Brand color */
-    --secondary-color: #74647a; /* Slightly darker shade for contrast */
+    --primary-color: #b8aabd; /* Brand color */
+    --secondary-color: #827487; /* Slightly darker shade for contrast */
     --accent-color: #ffffff; /* Light color for text and highlights */
     --text-color: #f0f0f0;
     --shadow-color: rgba(0, 0, 0, 0.2);
@@ -119,11 +119,33 @@ h1 {
     text-align: center;
 }
 
-.core-roles {
+.core-roles-dropdown {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.dropdown-button {
+    background-color: var(--button-color); /* Button color */
+    color: var(--accent-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.dropdown-button:hover {
+    background-color: #6A0DAD; /* Slightly darker shade for hover effect */
+}
+
+.core-roles-content {
+    display: none; /* Initially hidden */
     background-color: var(--primary-color); /* Brand color */
     border-radius: 15px;
     padding: 2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     box-shadow: 0 4px 15px var(--shadow-color);
     text-align: left;
     color: var(--text-color);
