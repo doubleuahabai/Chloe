@@ -1,10 +1,10 @@
 :root {
-    --primary-color: #ada5b0;
-    --secondary-color: #9d8ea3; /* Slightly darker shade for contrast */
+    --primary-color: #ada5b0; /* Brand color */
+    --secondary-color: #74647a; /* Slightly darker shade for contrast */
     --accent-color: #ffffff; /* Light color for text and highlights */
     --text-color: #f0f0f0;
     --shadow-color: rgba(0, 0, 0, 0.2);
-    --button-color: purple; /* Button color */
+    --button-color: #800080; /* Purple color for buttons */
 }
 
 * {
@@ -15,7 +15,7 @@
 
 body {
     font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: black; /* Background set to black */
+    background: black; /* Change background to black */
     color: var(--text-color);
     line-height: 1.6;
     min-height: 100vh;
@@ -43,11 +43,12 @@ header {
 }
 
 .demo {
-    background-color: var(--button-color); /* Button color set to purple */
+    background-color: var(--button-color); /* Updated button color */
     color: var(--accent-color); /* Accent color text */
     font-weight: 700;
     border: none;
-    padding: 0.8rem 1.2rem; /* Increased button size */
+    padding: 0.85rem 1.2rem; /* Increased button size */
+    font-size: 1.1rem;
     border-radius: 49px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -55,20 +56,6 @@ header {
     position: relative;
     overflow: hidden;
     z-index: 0;
-}
-
-.demo::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(60deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 100%);
-    opacity: 0.5;
-    transform: rotate(-30deg);
-    animation: shine 1.5s infinite;
-    z-index: -1;
 }
 
 .demo:hover {
@@ -96,8 +83,7 @@ main {
     border-radius: 15px;
     box-shadow: 0 4px 15px var(--shadow-color);
     margin-bottom: 2rem;
-    background-color: var(--primary-color); /* Brand color background */
-    backdrop-filter: blur(8px); /* Apply blur effect */
+    background-color: var(--primary-color); /* Brand color */
 }
 
 .hero-text {
@@ -125,24 +111,48 @@ h1 {
 }
 
 .details {
-    background-color: var(--primary-color); /* Brand color background */
+    background-color: var(--primary-color); /* Brand color */
     border-radius: 15px;
     padding: 2rem;
     margin-top: 2rem;
     box-shadow: 0 4px 15px var(--shadow-color);
     text-align: center;
-    backdrop-filter: blur(8px); /* Apply blur effect */
 }
 
-.details-description {
+.core-roles {
+    background-color: var(--primary-color); /* Brand color */
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    text-align: left;
+    color: var(--text-color);
+}
+
+.core-roles-description,
+.core-roles-call-to-action {
     font-size: 1rem;
     line-height: 1.6;
-    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.roles-list,
+.benefits-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.roles-list li,
+.benefits-list li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
 }
 
 footer {
-    background-color: var(--primary-color); /* Brand color background */
-    backdrop-filter: blur(8px); /* Apply blur effect */
+    background-color: var(--primary-color); /* Brand color */
     padding: 1rem 5%;
     text-align: center;
     margin-top: 2rem;
@@ -214,16 +224,6 @@ footer {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes shine {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
 }
 
 @keyframes pulse {
