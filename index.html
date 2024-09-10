@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scarlett - Your 24/7 Brand Advocate</title>
+    <title>Scarlett - Your 24/7 Business Assistant</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -18,8 +18,8 @@
         <div class="hero">
             <img src="scarlett.png" alt="Scarlett" class="scarlett-image">
             <div class="hero-text">
-                <h1>Meet Scarlett - Your 24/7 Brand Advocate</h1>
-                <p class="subtitle">Bespoke Sales Agent | Booking Concierge | Brand Advocate | Knowledge Base Aficionado</p>
+                <h1>Meet Scarlett - Your 24/7 Business Assistant</h1>
+                <p class="subtitle">Brand Advocate | Bespoke Sales Agent | Booking Concierge | Knowledge Base Aficionado</p>
                 <p class="hero-description">
                     Scarlett is your tireless assistant, dedicated to enhancing your business operations round the clock. From advocating for your brand to managing bookings and providing tailored sales support, Scarlett is here to make your business thrive.
                 </p>
@@ -33,33 +33,36 @@
             </p>
         </div>
 
-        <!-- New Section for Scarlett's Core Roles & Features -->
-        <div class="core-roles">
-            <h2>Scarlett's Core Roles & Features</h2>
-            <p class="core-roles-description">
-                Scarlett is not just an assistant; she's a game-changing addition to your team. Combining the efficiency of advanced AI with the personalized touch of a dedicated human employee, Scarlett embodies your company's values and voice, guiding prospects through the sales funnel, optimizing bookings, and delivering up-to-date information instantly.
-            </p>
-            
-            <ul class="roles-list">
-                <li><strong>Brand Advocate:</strong> Consistently represents your brand across all interactions, ensuring your company’s values are at the forefront.</li>
-                <li><strong>Bespoke Sales Agent:</strong> Guides potential clients with a personalized approach, adapting to each prospect’s needs.</li>
-                <li><strong>Booking Concierge:</strong> Manages scheduling with an intelligent booking system, reducing no-shows and optimizing your calendar.</li>
-                <li><strong>Knowledge Base Aficionado:</strong> Provides accurate, up-to-date information on demand with access to your entire knowledge base.</li>
-            </ul>
+        <!-- New Dropdown Section -->
+        <div class="core-roles-dropdown">
+            <button class="dropdown-button" onclick="toggleDropdown()">Learn More About Scarlett</button>
+            <div id="coreRolesContent" class="core-roles-content">
+                <h2>Scarlett's Core Roles & Features</h2>
+                <p class="core-roles-description">
+                    Scarlett is not just an assistant; she's a game-changing addition to your team. Combining the efficiency of advanced AI with the personalized touch of a dedicated human employee, Scarlett embodies your company's values and voice, guiding prospects through the sales funnel, optimizing bookings, and delivering up-to-date information instantly.
+                </p>
+                
+                <ul class="roles-list">
+                    <li><strong>Brand Advocate:</strong> Consistently represents your brand across all interactions, ensuring your company’s values are at the forefront.</li>
+                    <li><strong>Bespoke Sales Agent:</strong> Guides potential clients with a personalized approach, adapting to each prospect’s needs.</li>
+                    <li><strong>Booking Concierge:</strong> Manages scheduling with an intelligent booking system, reducing no-shows and optimizing your calendar.</li>
+                    <li><strong>Knowledge Base Aficionado:</strong> Provides accurate, up-to-date information on demand with access to your entire knowledge base.</li>
+                </ul>
 
-            <h3>Key Benefits of Choosing Scarlett:</h3>
-            <ul class="benefits-list">
-                <li><strong>Unmatched Availability:</strong> Always on duty, providing instant response times and 24/7 support.</li>
-                <li><strong>Personalized Interactions:</strong> Tailors communication based on each client's preferences and needs.</li>
-                <li><strong>Scalable Support:</strong> Can handle multiple inquiries simultaneously and maintain peak performance.</li>
-                <li><strong>Continuous Improvement:</strong> Learns from every interaction and adapts to changes effortlessly.</li>
-                <li><strong>Data-Driven Insights:</strong> Offers analytics on engagement rates, conversion rates, and customer satisfaction.</li>
-                <li><strong>Seamless Integration:</strong> Integrates smoothly with your CRM, scheduling software, and other business systems.</li>
-            </ul>
+                <h3>Key Benefits of Choosing Scarlett:</h3>
+                <ul class="benefits-list">
+                    <li><strong>Unmatched Availability:</strong> Always on duty, providing instant response times and 24/7 support.</li>
+                    <li><strong>Personalized Interactions:</strong> Tailors communication based on each client's preferences and needs.</li>
+                    <li><strong>Scalable Support:</strong> Can handle multiple inquiries simultaneously and maintain peak performance.</li>
+                    <li><strong>Continuous Improvement:</strong> Learns from every interaction and adapts to changes effortlessly.</li>
+                    <li><strong>Data-Driven Insights:</strong> Offers analytics on engagement rates, conversion rates, and customer satisfaction.</li>
+                    <li><strong>Seamless Integration:</strong> Integrates smoothly with your CRM, scheduling software, and other business systems.</li>
+                </ul>
 
-            <p class="core-roles-call-to-action">
-                Experience the Scarlett difference today! Book a demo and see how Scarlett can revolutionize your business operations with AI-powered support.
-            </p>
+                <p class="core-roles-call-to-action">
+                    Experience the Scarlett difference today! Book a demo and see how Scarlett can revolutionize your business operations with AI-powered support.
+                </p>
+            </div>
         </div>
     </main>
 
@@ -80,6 +83,15 @@
     </div>
 
     <script type="text/javascript">
+        function toggleDropdown() {
+            var content = document.getElementById('coreRolesContent');
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        }
+
         (function(d, t) {
             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
             v.onload = function() {
