@@ -4,7 +4,7 @@
     --accent-color: #ffffff; /* Light color for text and highlights */
     --text-color: #f0f0f0;
     --shadow-color: rgba(0, 0, 0, 0.2);
-    --button-color: #800080; /* Purple color for buttons */
+    --button-color: #5A2E6B; /* Purple color for buttons */
 }
 
 * {
@@ -131,13 +131,40 @@ h1 {
     padding: 0.75rem 1.5rem;
     font-size: 1.1rem;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 49px; /* Curved edges to match "Talk with Scarlett" button */
+    transition: all 0.3s ease;
     margin-bottom: 1rem;
+    position: relative; /* For the glowing effect */
+    overflow: hidden;
+    box-shadow: 0 6px 12px var(--shadow-color); /* Glowing effect */
+}
+
+.dropdown-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(60deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 100%);
+    opacity: 0.5;
+    transform: rotate(-30deg);
+    animation: shine 1.5s infinite;
+    z-index: -1;
 }
 
 .dropdown-button:hover {
-    background-color: #6A0DAD; /* Slightly darker shade for hover effect */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px var(--shadow-color); /* Enhanced glow on hover */
+}
+
+@keyframes shine {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
 }
 
 .core-roles-content {
