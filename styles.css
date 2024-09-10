@@ -91,10 +91,10 @@ main {
 }
 
 .scarlett-image {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 10px;
-    animation: slideIn 1s ease-out;
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    margin-bottom: 2rem;
 }
 
 .hero-text {
