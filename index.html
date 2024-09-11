@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="logo">OctoPlex AI</div>
-        <button class="demo" id="openChat" onclick="openChatWidget()">Talk to Scarlett</button>
+        <button class="demo" id="openChat">Talk to Scarlett</button>
     </header>
 
     <main>
@@ -49,7 +49,7 @@
                     <li><strong>Knowledge Base Aficionado:</strong> Provides accurate, up-to-date information on demand with access to your entire knowledge base.</li>
                 </ul>
 
-                <h2>Key Benefits of Choosing Scarlett:</h2>
+                <h3>Key Benefits of Choosing Scarlett:</h3>
                 <ul class="benefits-list">
                     <li><strong>Unmatched Availability:</strong> Always on duty, providing instant response times and 24/7 support.</li>
                     <li><strong>Personalized Interactions:</strong> Tailors communication based on each client's preferences and needs.</li>
@@ -93,8 +93,12 @@
         }
 
         function openChatWidget() {
-            // Trigger Voiceflow chat widget to open
-            window.VoiceflowAssistant.open();
+            // Check if the Voiceflow widget is loaded and then open it
+            if (window.VoiceflowAssistant && window.VoiceflowAssistant.toggleChat) {
+                window.VoiceflowAssistant.toggleChat();
+            } else {
+                console.error('Voiceflow chat widget is not initialized.');
+            }
         }
 
         (function(d, t) {
@@ -107,6 +111,8 @@
                     onLoad: function() {
                         // Initialize the widget globally for later use
                         window.VoiceflowAssistant = window.voiceflow.chat;
+                        // Add click event listener to open chat button
+                        document.getElementById('openChat').addEventListener('click', openChatWidget);
                     }
                 });
             }
