@@ -70,10 +70,6 @@
         <p>&copy; 2024 OctoPlex AI | Intelligent Business Solutions</p>
     </footer>
 
-    <div id="chatContainer" class="chat-container">
-        Got questions? <br> Ask Scarlett now!
-    </div>
-
     <div id="demoModal" class="modal">
         <div class="modal-content">
             <span class="close" id="closeModal">&times;</span>
@@ -83,40 +79,37 @@
     </div>
 
     <script type="text/javascript">
+        // Function to toggle dropdown content visibility
         function toggleDropdown() {
             var content = document.getElementById('coreRolesContent');
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
-            } else {
-                content.style.display = 'block';
-            }
+            content.style.display = (content.style.display === 'block') ? 'none' : 'block';
         }
 
-        function openChatWidget() {
-            // Check if the Voiceflow widget is loaded and then open it
-            if (window.VoiceflowAssistant && window.VoiceflowAssistant.toggleChat) {
-                window.VoiceflowAssistant.toggleChat();
-            } else {
-                console.error('Voiceflow chat widget is not initialized.');
-            }
-        }
-
+        // Voiceflow chat widget loading script
         (function(d, t) {
             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
             v.onload = function() {
                 window.voiceflow.chat.load({
-                    verify: { projectID: '66e0c612013728e712ba403c' },
+                    verify: { projectID: '66e0c612013728e712ba403c' }, // Ensure the project ID is correct
                     url: 'https://general-runtime.voiceflow.com',
-                    versionID: 'production',
-                    onLoad: function() {
-                        // Initialize the widget globally for later use
-                        window.VoiceflowAssistant = window.voiceflow.chat;
-                        // Add click event listener to open chat button
-                        document.getElementById('openChat').addEventListener('click', openChatWidget);
-                    }
+                    versionID: 'production'
+                }).then(() => {
+                    // Clear all previous messages and send proactive messages
+                    window.voiceflow.chat.proactive.clear();
+                    window.voiceflow.chat.proactive.push(
+                        { type: 'text', payload: { message: 'Got questions?' } },
+                        { type: 'text', payload: { message: 'Click here to ask Scarlett!' } }
+                    );
+
+                    // Add event listener to open the chat widget when clicking the button
+                    document.getElementById('openChat').addEventListener('click', function() {
+                        window.voiceflow.chat.open();
+                    });
                 });
-            }
-            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+            };
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+            v.type = "text/javascript"; 
+            s.parentNode.insertBefore(v, s);
         })(document, 'script');
     </script>
 </body>
