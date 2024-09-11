@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="logo">OctoPlex AI</div>
-        <button class="demo" id="openModal">Talk to Scarlett</button>
+        <button class="demo" id="openChat" onclick="openChatWidget()">Talk to Scarlett</button>
     </header>
 
     <main>
@@ -49,7 +49,7 @@
                     <li><strong>Knowledge Base Aficionado:</strong> Provides accurate, up-to-date information on demand with access to your entire knowledge base.</li>
                 </ul>
 
-                <h3>Key Benefits of Choosing Scarlett:</h3>
+                <h2>Key Benefits of Choosing Scarlett:</h2>
                 <ul class="benefits-list">
                     <li><strong>Unmatched Availability:</strong> Always on duty, providing instant response times and 24/7 support.</li>
                     <li><strong>Personalized Interactions:</strong> Tailors communication based on each client's preferences and needs.</li>
@@ -92,17 +92,27 @@
             }
         }
 
+        function openChatWidget() {
+            // Trigger Voiceflow chat widget to open
+            window.VoiceflowAssistant.open();
+        }
+
         (function(d, t) {
             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
             v.onload = function() {
                 window.voiceflow.chat.load({
                     verify: { projectID: '66e0c612013728e712ba403c' },
                     url: 'https://general-runtime.voiceflow.com',
-                    versionID: 'production'
+                    versionID: 'production',
+                    onLoad: function() {
+                        // Initialize the widget globally for later use
+                        window.VoiceflowAssistant = window.voiceflow.chat;
+                    }
                 });
             }
             v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
         })(document, 'script');
     </script>
 </body>
+
 </html>
